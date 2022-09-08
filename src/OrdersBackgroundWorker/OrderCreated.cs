@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderMaker
+namespace OrdersBackgroundWorker
 {
-    internal class OrderCreated
+    public class OrderCreated
     {
         public Guid OrderId { get; set; }
         public int Quantity { get; set; }
@@ -16,7 +17,7 @@ namespace OrderMaker
         public bool OrderProcessed { get; set; }
     }
 
-    internal class Order
+    public class Order
     {
         public Guid OrderId { get; set; }
         public int Quantity { get; set; }

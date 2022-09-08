@@ -24,26 +24,28 @@ namespace OrderMaker
             // Read the request body and deserialize it into a
             // order created event. 
             var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            var data = JsonConvert.DeserializeObject<OrderCreatedEvent>(requestBody);            
+            //var data = JsonConvert.DeserializeObject<OrderCreatedEvent>(requestBody);            
 
-            // Create an instance of the blob container client if it does
-            // not already exist. 
-            if (client == null)
-            {
-                var connectionString = Environment.GetEnvironmentVariable("OrdersConnectionString");                
-                client = new BlobContainerClient(connectionString, "orders");
-            }
+            //// Create an instance of the blob container client if it does
+            //// not already exist. 
+            //if (client == null)
+            //{
+            //    var connectionString = Environment.GetEnvironmentVariable("OrdersConnectionString");                
+            //    client = new BlobContainerClient(connectionString, "orders");
+            //}
 
-            // Create the container, if necessary.
-            await client.CreateIfNotExistsAsync();
+            //// Create the container, if necessary.
+            //await client.CreateIfNotExistsAsync();
 
-            // Upload the blob with the order ID as the name of the file.
-            using var stream = new MemoryStream(Encoding.ASCII.GetBytes(requestBody));
-            await client.UploadBlobAsync($"{data.OrderId}.json", stream);
+            //// Upload the blob with the order ID as the name of the file.
+            //using var stream = new MemoryStream(Encoding.ASCII.GetBytes(requestBody));
+            //await client.UploadBlobAsync($"{data.OrderId}.json", stream);
 
-            // Return a successful message with the file name that was uploaded.
-            string responseMessage = $"{data.OrderId}.json uploaded.";
-            return new OkObjectResult(responseMessage);
+            //// Return a successful message with the file name that was uploaded.
+            //string responseMessage = $"{data.OrderId}.json uploaded.";
+            //return new OkObjectResult(responseMessage);
+
+            return new OkObjectResult("test");
         }
     }
 }
