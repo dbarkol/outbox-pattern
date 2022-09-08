@@ -11,6 +11,7 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.WebJobs.ServiceBus;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using OrdersBackgroundWorker.Models;
 
 namespace OrdersBackgroundWorker
 {
@@ -26,12 +27,12 @@ namespace OrdersBackgroundWorker
                 LeaseCollectionName = "order-leases")] IReadOnlyList<Document> input,
             [CosmosDB(
                 databaseName: "OrdersDatabase",
-                collectionName: "OrdersCreated",
+                collectionName: "OrdersOutbox",
                 ConnectionStringSetting = "CosmosDBConnectionString",
                 SqlQuery = "select * from OrdersCreated r where r.OrderProcessed = false")] IEnumerable<Document> ordersCreated,
             [CosmosDB(
                 databaseName: "OrdersDatabase",
-                collectionName: "OrdersCreated",
+                collectionName: "OrdersOutbox",
                 ConnectionStringSetting = "CosmosDBConnectionString"
             )] DocumentClient client,
             [ServiceBus(
