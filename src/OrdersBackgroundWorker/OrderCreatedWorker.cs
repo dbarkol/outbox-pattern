@@ -38,7 +38,7 @@ namespace OrdersBackgroundWorker
             [ServiceBus(
                 "orders", 
                 Connection = "ServiceBusConnectionString", 
-                EntityType = ServiceBusEntityType.Queue
+                EntityType = ServiceBusEntityType.Topic
             )] IAsyncCollector<Order> ordersToProcess,
             ILogger log)
         {
