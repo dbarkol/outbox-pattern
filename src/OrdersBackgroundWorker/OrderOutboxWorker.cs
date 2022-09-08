@@ -75,6 +75,7 @@ namespace OrdersBackgroundWorker
                     // Set the message ID and session ID properties
                     // to the order ID
                     msg.MessageId = order.OrderId.ToString();
+                    msg.ContentType = "application/json";
                     msg.SessionId = msg.MessageId;
 
                     // Publish the message
