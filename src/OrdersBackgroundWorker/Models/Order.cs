@@ -10,8 +10,6 @@ namespace OrdersBackgroundWorker.Models
     {
         public Guid OrderId { get; set; }
         public int Quantity { get; set; }
-        public DateTime OrderDate { get; set; }
-        public DateTime RequestedDate { get; set; }
         public int AccountNumber { get; set; }
     }
 }

@@ -48,7 +48,7 @@ namespace OrderMaker
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            // Read the request body and deserialize it into a
+            // Read the request body and deserialize it into an
             // order object so that it can be saved to CosmosDB.
             var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var incomingOrder = JsonConvert.DeserializeObject<Order>(requestBody);
@@ -57,12 +57,10 @@ namespace OrderMaker
             await orders.AddAsync(incomingOrder);
 
             // Insert OrderOutbox item
-            var orderCreated = new OrderCreated { 
+            var orderCreated = new OrderOutbox { 
                 AccountNumber = incomingOrder.AccountNumber,
-                OrderDate = incomingOrder.OrderDate,
                 OrderId = incomingOrder.OrderId,
                 Quantity = incomingOrder.Quantity,
-                RequestedDate = incomingOrder.RequestedDate,
                 OrderProcessed = false
             };
             await ordersCreated.AddAsync(orderCreated);
