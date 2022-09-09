@@ -15,15 +15,15 @@ namespace OrderMaker
     {
         /// <summary>
         /// 
-        ///    This HTTP triggered function is invoked with an incoming order request.
+        /// This HTTP triggered function is invoked with an incoming order request.
         ///
-        ///    After processing the incoming request, CosmosDB output bindings are used
-        ///    to insert items into two separate containers:
+        /// After processing the incoming request, CosmosDB output bindings are used
+        /// to insert items into two separate containers:
         ///    
-        ///    1) An Orders container to preserve the incoming order
-        ///    2) An OrdersOutbox container to support the outbox pattern
+        /// 1) An Orders container to persist the details
+        /// 2) An OrdersOutbox container to support a transactional outbox pattern
         ///    
-        ///    References: https://docs.microsoft.com/en-us/azure/architecture/best-practices/transactional-outbox-cosmos          
+        /// References: https://docs.microsoft.com/en-us/azure/architecture/best-practices/transactional-outbox-cosmos          
         ///    
         /// </summary>
         /// <param name="req">Incoming HTTP request</param>
@@ -46,7 +46,7 @@ namespace OrderMaker
             )] IAsyncCollector<object> ordersCreated,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            log.LogInformation("Incoming order request invoked");
 
             // Read the request body and deserialize it into an
             // order object so that it can be saved to CosmosDB.
@@ -56,7 +56,8 @@ namespace OrderMaker
             // Insert Order item
             await orders.AddAsync(incomingOrder);
 
-            // Insert OrderOutbox item
+            // Initialize the order processed property to false
+            // and insert OrderOutbox item
             var orderCreated = new OrderOutbox { 
                 AccountNumber = incomingOrder.AccountNumber,
                 OrderId = incomingOrder.OrderId,
