@@ -77,6 +77,7 @@ namespace OrdersBackgroundWorker
                     msg.MessageId = order.OrderId.ToString();
                     msg.ContentType = "application/json";
                     msg.SessionId = msg.MessageId;
+                    msg.ApplicationProperties.Add("MessageType", "OrderCreatedEvent");
 
                     // Publish the message
                     await ordersToProcess.AddAsync(msg);                    

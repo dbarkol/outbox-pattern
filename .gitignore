@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/src/BlobProcessor/Properties/ServiceDependencies/orderblobprocessor - Web Deploy
+/src/BlobProcessor/Properties/ServiceDependencies/orderblobprocessor - Zip Deploy/profile.arm.json
+/src/OrderMaker/Properties/ServiceDependencies/ordermaker - Web Deploy
+/src/OrderMaker/Properties/ServiceDependencies/ordermaker - Zip Deploy/profile.arm.json
+/src/OrdersBackgroundWorker/Properties/ServiceDependencies/orderbackgroundworker - Web Deploy
+/src/OrdersBackgroundWorker/Properties/ServiceDependencies/orderbackgroundworker - Zip Deploy/profile.arm.json
