@@ -85,9 +85,7 @@ namespace OrdersBackgroundWorker
                     // the outbox transaction
                     o.SetPropertyValue("OrderProcessed", true);
                     await client.ReplaceDocumentAsync(o.SelfLink, o);
-                }
-               
-
+                }              
             }
         }
     }
