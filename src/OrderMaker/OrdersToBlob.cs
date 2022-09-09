@@ -26,7 +26,7 @@ namespace OrderMaker
         /// <returns>The name of the file that was created and saved into a blob container</returns>
         [FunctionName("OrdersToBlob")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
             ILogger log)
         {
             // Read the request body and deserialize it into a
