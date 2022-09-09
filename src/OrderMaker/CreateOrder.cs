@@ -33,7 +33,7 @@ namespace OrderMaker
         /// <returns></returns>
         [FunctionName("CreateOrder")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
             [CosmosDB(
                 databaseName: "OrdersDatabase",
                 collectionName: "Orders",

@@ -25,7 +25,7 @@ namespace BlobProcessor
 
         [FunctionName("OrderCreatedProcessor")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, 
+            [HttpTrigger(AuthorizationLevel.Anonymous, 
                         "post", 
                         "options", 
                         Route = null)] HttpRequest req,
