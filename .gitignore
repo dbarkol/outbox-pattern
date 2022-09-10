@@ -354,3 +354,5 @@ MigrationBackup/
 /src/OrderMaker/Properties/ServiceDependencies/ordermaker - Zip Deploy/profile.arm.json
 /src/OrdersBackgroundWorker/Properties/ServiceDependencies/orderbackgroundworker - Web Deploy
 /src/OrdersBackgroundWorker/Properties/ServiceDependencies/orderbackgroundworker - Zip Deploy/profile.arm.json
+/src/MessageReplicator/Properties/ServiceDependencies/genetec-message-replicator - Web Deploy
+/src/MessageReplicator/Properties/ServiceDependencies/genetec-message-replicator - Zip Deploy
