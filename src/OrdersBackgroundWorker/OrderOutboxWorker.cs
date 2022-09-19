@@ -13,9 +13,9 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.WebJobs.ServiceBus;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using OrdersBackgroundWorker.Models;
+using OutboxProcessor.Models;
 
-namespace OrdersBackgroundWorker
+namespace OutboxProcessor
 {
     public static class OrderOutboxWorker
     {

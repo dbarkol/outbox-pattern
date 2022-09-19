@@ -5,11 +5,11 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderMaker", "OrderMaker\OrderMaker.csproj", "{54EC1760-F918-4FD9-A5D9-B54D9F945AC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlobProcessor", "BlobProcessor\BlobProcessor.csproj", "{AA82394B-B105-4C80-83B4-49F4D82D4BD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClaimCheckProcessor", "BlobProcessor\ClaimCheckProcessor.csproj", "{AA82394B-B105-4C80-83B4-49F4D82D4BD6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdersBackgroundWorker", "OrdersBackgroundWorker\OrdersBackgroundWorker.csproj", "{6E188EE9-DE52-443C-B462-89320ED17B4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutboxProcessor", "OrdersBackgroundWorker\OutboxProcessor.csproj", "{6E188EE9-DE52-443C-B462-89320ED17B4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageReplicator", "MessageReplicator\MessageReplicator.csproj", "{9D44F32A-2D9D-40D0-9844-2DAC4C66E731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageReplicator", "MessageReplicator\MessageReplicator.csproj", "{9D44F32A-2D9D-40D0-9844-2DAC4C66E731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

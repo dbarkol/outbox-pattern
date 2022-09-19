@@ -13,11 +13,11 @@ using System.Text;
 using Azure.Messaging;
 using Azure.Messaging.EventGrid.SystemEvents;
 using Azure.Storage.Blobs;
-using BlobProcessor.Models;
+using ClaimCheckProcessor.Models;
 using Microsoft.Azure.WebJobs.ServiceBus;
 using Azure.Messaging.ServiceBus;
 
-namespace BlobProcessor
+namespace ClaimCheckProcessor
 {
     public static class OrderCreatedProcessor
     {
